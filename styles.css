@@ -111,6 +111,10 @@ h2 {
   display: none;
 }
 
+#header-desktop {
+  display: none;
+}
+
 #headshot-container {
   display: flex;
   justify-content: center;
@@ -241,6 +245,10 @@ footer {
   padding: 16px;
 }
 
+#footer-message {
+  max-width: 280px;
+}
+
 @media (min-width: 696px) {
   #footer-content {
     max-width: 632px;
@@ -258,10 +266,7 @@ footer .devicon-github-original {
 
 /* Header (tablet) */
 @media (min-width: 768px) {
-  #header-mobile {
-    display: none;
-  }
-
+  #header-mobile,
   #about-me-mobile {
     display: none;
   }
@@ -285,7 +290,7 @@ footer .devicon-github-original {
     z-index: 2;
   }
 
-  #header-content-tablet h1 {
+  h1 {
     position: relative;
     font-size: 40px;
     margin: 0px;
@@ -329,5 +334,80 @@ footer .devicon-github-original {
 
   #my-work h2 {
     font-size: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  #header-mobile,
+  #header-tablet,
+  #about-me-mobile,
+  #about-me-tablet {
+    display: none;
+  }
+
+  #header-desktop {
+    display: block;
+    width: 100%;
+  }
+
+  #header-content-desktop {
+    display: grid;
+    grid-template-columns: 360px 480px;
+    align-items: center;
+    justify-content: center;
+    background-color: midnightblue;
+    height: 200px;
+    padding-top: 32px;
+    z-index: 0;
+  }
+
+  #headshot-container-desktop {
+    z-index: 1;
+  }
+
+  #headshot-container-desktop img {
+    box-shadow: 2px 2px 5px black;
+  }
+
+  h1 {
+    font-size: 48px;
+    text-align: center;
+    margin-top: -72px;
+  }
+
+  #about-me-desktop {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 2px 2px 5px black;
+    max-width: 480px;
+    max-height: 308px;
+    padding: 32px;
+    z-index: 1;
+  }
+
+  #about-me-desktop h2 {
+    margin-bottom: 8px;
+  }
+
+  #about-me-desktop .devicon-github-original {
+    align-self: end;
+    font-size: 32px;
+  }
+
+  #header-bottom-border-desktop {
+    background-color: midnightblue;
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 100%);
+    margin-top: -1px;
+    height: 250px;
+    z-index: 0;
+  }
+
+  #my-work {
+    margin-top: 0px;
+  }
+
+  #project-list {
+    gap: 30px;
   }
 }
