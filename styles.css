@@ -101,10 +101,14 @@ h2 {
   font-family: "Italiana";
 }
 
-/* Header */
-header {
+/* Header (mobile) */
+#header-mobile {
   width: 100%;
   margin-bottom: 40px;
+}
+
+#header-tablet {
+  display: none;
 }
 
 #headshot-container {
@@ -112,6 +116,13 @@ header {
   justify-content: center;
   background-color: midnightblue;
   height: 140px;
+}
+
+#headshot-container img {
+  position: absolute;
+  max-width: 320px;
+  padding: 32px;
+  z-index: 1;
 }
 
 h1 {
@@ -122,23 +133,15 @@ h1 {
   z-index: 1;
 }
 
-#headshot-container img {
-  position: absolute;
-  max-width: 320px;
-  padding: 32px;
-  z-index: 1;
-}
-
-#header-bottom-border {
-  height: 120px;
+#header-bottom-border-mobile {
   background-color: midnightblue;
-  clip-path: polygon(0 0, 100% 0, 100% 30%, 0% 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 100%);
+  height: 120px;
   margin-top: -1px;
-
 }
 
-/* About me */
-#about-me {
+/* About me (mobile) */
+#about-me-mobile {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -147,21 +150,21 @@ h1 {
   margin-bottom: 32px;
 }
 
-#about-me p {
+#about-me-mobile p {
   padding: 0px 16px;
 }
 
 @media (min-width: 696px) {
-  #about-me {
+  #about-me-mobile {
     max-width: 632px;
   }
 
-  #about-me p {
+  #about-me-mobile p {
     padding: 0px;
   }
 }
 
-#about-me .devicon-github-original {
+#about-me-mobile .devicon-github-original {
   font-size: 32px;
 }
 
@@ -251,4 +254,80 @@ footer h2 {
 footer .devicon-github-original {
   align-self: center;
   font-size: 32px;
+}
+
+/* Header (tablet) */
+@media (min-width: 768px) {
+  #header-mobile {
+    display: none;
+  }
+
+  #about-me-mobile {
+    display: none;
+  }
+
+  #header-tablet {
+    display: block;
+    width: 100%;
+  }
+
+  #header-content-tablet {
+    background-color: midnightblue;
+    height: 150px;
+  }
+
+  #header-content-tablet img {
+    position: relative;
+    float: left;
+    box-shadow: 2px 2px 5px black;
+    max-height: 320px;
+    margin: 32px 24px 0px 32px;
+    z-index: 2;
+  }
+
+  #header-content-tablet h1 {
+    position: relative;
+    font-size: 40px;
+    margin: 0px;
+  }
+
+  #about-me-tablet {
+    position: relative;
+    background-color: white;
+    box-shadow: 2px 2px 5px black;
+    max-width: 632px;
+    min-height: 432px;
+    text-align: center;
+    margin: auto;
+    padding: 32px;
+    z-index: 1;
+  }
+
+  #about-me-tablet h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+
+  #about-me-tablet p {
+    text-align: start;
+  }
+
+  #header-bottom-border-tablet {
+    background-color: midnightblue;
+    clip-path: polygon(0 0, 100% 0, 100% 0%, 0% 100%);
+    margin-top: -1px;
+    height: 250px;
+    z-index: 1;
+  }
+
+  #my-work {
+    max-width: 1028px;
+    margin-top: 120px;
+  }
+
+  #my-work h2 {
+    font-size: 32px;
+  }
 }
